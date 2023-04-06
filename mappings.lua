@@ -23,6 +23,7 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     ["zz"] = { ":w<cr>", desc = "Save File" }, -- change description but the same command
+    ["<leader>Ft"] = { ":Format<cr>", desc = "Format file" },
   },
   t = {
     -- setting a mapping to false will disable it
