@@ -22,6 +22,11 @@ return {
 				-- 		return { exe = "formatjson5", args = { "-" }, stdin = true }
 				-- 	end,
 				-- },
+				css = {
+					-- require("formatter.filetypes.javascript").prettiereslint,
+					require("formatter.filetypes.javascript").prettierd,
+
+				},
 				javascript = {
 					-- require("formatter.filetypes.javascript").prettiereslint,
 					require("formatter.filetypes.javascript").prettierd,

@@ -11,9 +11,11 @@ return {
         "lua_ls",
         "clangd",
         "svelte",
-        "grammarly",
+        -- "grammarly",
         "tsserver",
-        "jsonls"
+        "jsonls",
+        "rust_analyzer",
+        "tailwindcss",
       },
     },
   },
@@ -22,14 +24,14 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettierd", "stylua" },
+      ensure_installed = { "prettier", "stylua" },
     },
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
-      -- ensure_installed = { "python" },
+      ensure_installed = { "codelldb" },
     },
   },
 }
