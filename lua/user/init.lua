@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 
+-- HACK Work
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -19,14 +20,13 @@ return {
     },
   },
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "astrotheme",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
     underline = true,
   },
   lsp = {
-    
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save

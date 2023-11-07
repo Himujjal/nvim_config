@@ -11,7 +11,6 @@ return {
       -- Set a formatter
       null_ls.builtins.formatting.stylua,
       -- null_ls.builtins.formatting.stylua,
-      null_ls.builtins.formatting.rome,
       null_ls.builtins.formatting.prettier.with {
         filetypes = { "svelte" },
       },

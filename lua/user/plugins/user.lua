@@ -27,7 +27,7 @@ return {
     event = "BufRead",
     config = function()
       require("mason-tool-installer").setup {
-        ensure_installed = { "glow" },
+        -- ensure_installed = { "glow" },
       }
     end,
   },
@@ -64,7 +64,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    event = "User AstroFile",
-    config = true,
+    event = "BufRead",
+    config = function() require("todo-comments").setup {} end,
   },
 }

@@ -7,13 +7,10 @@ return {
     opts = {
       ensure_installed = {
         "zls",
-        "rome",
         "lua_ls",
         "clangd",
         "svelte",
-        -- "grammarly",
         "tsserver",
-        "jsonls",
         "rust_analyzer",
         "tailwindcss",
       },
@@ -24,7 +21,10 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettier", "stylua" },
+      ensure_installed = {
+        "prettier",
+        "stylua",
+      },
     },
   },
   {
