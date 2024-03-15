@@ -67,4 +67,31 @@ return {
     event = "BufRead",
     config = function() require("todo-comments").setup {} end,
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        "document_symbols",
+      },
+      default_source = "filesystem", -- you can choose a specific source `last` here which indicates the last used source
+    },
+  },
+  {
+    "gorbit99/codewindow.nvim",
+    config = function()
+      local codewindow = require "codewindow"
+      codewindow.setup()
+    end,
+  },
+  {
+    "nvim-telescope/telescope-symbols.nvim",
+    opts = {
+      sources = {
+        "emoji", "kamoji", "gitmoji"
+      },
+    }
+  },
 }

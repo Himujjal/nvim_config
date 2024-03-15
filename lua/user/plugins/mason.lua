@@ -6,14 +6,14 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "zls",
+        -- "zls",
         "lua_ls",
         "clangd",
         "svelte",
         "tsserver",
         "rust_analyzer",
         "tailwindcss",
-      },
+      }
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources

@@ -6,6 +6,7 @@ return {
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.completion.copilot-lua" },
+  -- { import = "astrocommunity.motion.leap-nvim" },
   {
     "copilot.lua",
     opts = {

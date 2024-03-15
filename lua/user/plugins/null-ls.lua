@@ -16,7 +16,7 @@ return {
       },
       null_ls.builtins.formatting.gofmt,
       null_ls.builtins.formatting.rustfmt,
-      null_ls.builtins.formatting.zigfmt,
+      -- null_ls.builtins.formatting.zigfmt,
       null_ls.builtins.formatting.clang_format,
     }
     return config -- return final config table
