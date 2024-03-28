@@ -13,7 +13,7 @@ return {
         "tsserver",
         "rust_analyzer",
         "tailwindcss",
-      }
+      },
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -29,7 +29,6 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       ensure_installed = { "codelldb" },
     },

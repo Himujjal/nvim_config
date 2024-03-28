@@ -5,6 +5,8 @@
 -- automatically pick-up stored data by this setting.)
 local cmd = vim.cmd
 local codewindow = require "codewindow"
+local heirline = require "astronvim.utils.status"
+local buffer = require "astronvim.utils.buffer"
 
 local function lspQuickFix()
   local opts = { noremap = true, silent = true }
@@ -22,9 +24,7 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
+        heirline.heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
       end,
       desc = "Pick to close",
     },
@@ -42,7 +42,14 @@ return {
     ["<leader>mm"] = { function() codewindow.toggle_minimap() end, desc = "Toggle the minimap" },
 
     ["<leader>ge"] = { ":ChatGPT<cr>", desc = "Open GPT prompt" },
-    -- ["<leader>e"] = { ":Neotree focus<cr>", desc = "Focus on Neotree"  },
+    ["}"] = {
+      function() buffer.nav(1) end,
+      desc = "Next buffer",
+    },
+    ["{"] = {
+      function() buffer.nav(-1) end,
+      desc = "Prev buffer",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
