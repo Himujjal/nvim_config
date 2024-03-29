@@ -1,4 +1,1 @@
-return function()
-    -- Nvim-qt configuration here
-
-end
+return function() end
