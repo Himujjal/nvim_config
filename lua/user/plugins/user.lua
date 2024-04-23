@@ -1,24 +1,11 @@
 --- User configured plugins
 return {
   {
-    "ellisonleao/glow.nvim",
-    event = "BufRead",
-    config = function()
-      --- @diagnostic disable-next-line: missing-fields
-      require("glow").setup {
-        width = 150,
-        height = 80,
-        -- width_ratio = 1.0, -- maximum width of the Glow window compared to the nvim window size (overrides `width`)
-        -- height_ratio = 0.7,
-      }
-    end,
-  },
-  {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     event = "BufRead",
     config = function()
       require("mason-tool-installer").setup {
-        ensure_installed = { "glow" },
+        ensure_installed = {},
       }
     end,
   },
@@ -53,4 +40,15 @@ return {
       },
     },
   },
+  {
+    "toppair/peek.nvim",
+    event = { "VeryLazy" },
+    build = "deno task --quiet build:fast",
+    config = function()
+      require("peek").setup()
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
+  },
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 }

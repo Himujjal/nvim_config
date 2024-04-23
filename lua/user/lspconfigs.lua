@@ -10,9 +10,28 @@ local zls = function()
   }
 end
 
+local v_analyzer = function()
+  return {
+    cmd = { "v-analyzer" },
+    filetypes = { "v", "vlang", "vsh", "vv" },
+    root_dir = require("lspconfig.util").root_pattern("v.mod", ".git"),
+  }
+end
+
+local tailwindcss = function()
+  return {
+    root_dir = require("lspconfig.util").root_pattern(
+      "tailwind.config.js",
+      "tailwind.config.ts",
+      "tailwind.config.cjs"
+    ),
+  }
+end
+
 local tsserver = function()
   return {
     single_file_support = false,
+    semanticTokensProvider = nil,
     settings = {
       typescript = {
         inlayHints = {
@@ -52,31 +71,14 @@ local svelte = function()
 end
 
 return {
-  formatting = {
-    format_on_save = {
-      allow_filetypes = { "go", "rs", "lua", "tsx", "ts" },
-      ignore_filetypes = {},
-    },
-    timeout_ms = 3000,
-  },
-
   -- enable servers that you already have installed without mason
-  servers = { "zls" },
+  servers = { "zls", "v_analyzer" },
   config = {
-    clangd = {
-      capabilities = { offsetEncoding = "utf-8" },
-    },
+    clangd = { capabilities = { offsetEncoding = "utf-8" } },
     zls = zls,
+    v_analyzer = v_analyzer,
     tsserver = tsserver,
-    tailwindcss = function()
-      return {
-        root_dir = require("lspconfig.util").root_pattern(
-          "tailwind.config.js",
-          "tailwind.config.ts",
-          "tailwind.config.cjs"
-        ),
-      }
-    end,
+    tailwindcss = tailwindcss,
     svelte = svelte,
   },
 }
