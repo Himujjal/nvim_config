@@ -2,6 +2,7 @@ local neovide = require "user.neovide"
 local nvimQt = require "user.nvim-qt"
 local dapconfigs = require "user.dapconfigs"
 
+-- Format on save
 local enable_format_on_save = function(pattern)
   local _pattern = pattern or { "*.go", "*.rs", "*.lua", "*.tsx", "*.ts" }
   vim.api.nvim_create_autocmd("BufWritePre", {
@@ -38,7 +39,7 @@ return function()
   }
 
   -- comment/uncomment based on your preference
-  enable_format_on_save()
+  -- enable_format_on_save()
 
   -- neovide in [neovide.lua](./neovide.lua)
   if vim.g.neovide then neovide() end

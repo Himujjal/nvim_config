@@ -15,6 +15,17 @@ return {
     ["zz"] = { ":w<cr>", desc = "Save File" }, -- change description but the same command
     ["<leader>Ft"] = { ":Format<cr>", desc = "Format file" },
     ["<leader>md"] = { ":Glow<cr>", desc = "View Markdown Preview" },
+    ["<leader>mp"] = {
+      function()
+        local peek = require "peek"
+        if peek.is_open() then
+          peek.close()
+        else
+          peek.open()
+        end
+      end,
+      desc = "Markdown Peek toggle (new window)",
+    },
     ["<c-c>"] = { ":%y+<cr><cr>", desc = "Copy file content", silent = true }, -- copies the file contents and then returns back to the position it was in
     ["<leader>mo"] = { function() codewindow.open_minimap() end, desc = "Open minimap" },
     ["<leader>mc"] = { function() codewindow.close_minimap() end, desc = "Close the minimap" },

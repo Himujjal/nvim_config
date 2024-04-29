@@ -73,6 +73,9 @@ end
 return {
   -- enable servers that you already have installed without mason
   servers = { "zls", "v_analyzer" },
+  formatting = {
+    format_on_save = true,
+  },
   config = {
     clangd = { capabilities = { offsetEncoding = "utf-8" } },
     zls = zls,
