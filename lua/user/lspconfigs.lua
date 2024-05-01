@@ -28,6 +28,21 @@ local tailwindcss = function()
   }
 end
 
+local prettierd = function()
+  return {
+    root_dir = require("lspconfig.util").root_pattern(
+      ".prettierrc",
+      ".prettierrc.json",
+      ".prettierrc.json5",
+      ".prettierrc.yaml",
+      ".prettierrc.yml",
+      ".prettierrc.js",
+      ".prettierrc.cjs",
+      ".prettierrc.toml"
+    ),
+  }
+end
+
 local tsserver = function()
   return {
     single_file_support = false,
@@ -74,7 +89,7 @@ return {
   -- enable servers that you already have installed without mason
   servers = { "zls", "v_analyzer" },
   formatting = {
-    format_on_save = true,
+    format_on_save = false,
   },
   config = {
     clangd = { capabilities = { offsetEncoding = "utf-8" } },
@@ -83,5 +98,6 @@ return {
     tsserver = tsserver,
     tailwindcss = tailwindcss,
     svelte = svelte,
+    prettierd = prettierd,
   },
 }

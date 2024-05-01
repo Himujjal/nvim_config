@@ -39,7 +39,7 @@ return function()
   }
 
   -- comment/uncomment based on your preference
-  -- enable_format_on_save()
+  enable_format_on_save()
 
   -- neovide in [neovide.lua](./neovide.lua)
   if vim.g.neovide then neovide() end
