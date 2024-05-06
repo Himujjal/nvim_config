@@ -99,6 +99,6 @@ return {
     -- tsserver = tsserver,
     tailwindcss = tailwindcss,
     svelte = svelte,
-    prettierd = prettierd,
+    -- prettierd = prettierd,
   },
 }

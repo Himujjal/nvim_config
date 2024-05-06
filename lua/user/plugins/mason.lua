@@ -9,7 +9,7 @@ return {
         "lua_ls",
         "clangd",
         "svelte",
-        "tsserver",
+        -- "tsserver",
         "rust_analyzer",
         "tailwindcss",
       },

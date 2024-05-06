@@ -25,7 +25,7 @@ return {
           require("formatter.filetypes.javascript").biome,
         },
         html = {
-          require("formatter.filetypes.html").prettierd,
+          require("formatter.filetypes.html").prettier,
         },
         css = {
           require("formatter.filetypes.css").prettierd,
