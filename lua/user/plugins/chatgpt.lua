@@ -24,6 +24,7 @@ return {
     require("chatgpt").setup {
       keymaps = {
         close = "q",
+        delete_session = "<leader>dd"
       },
       api_key_cmd = "echo $OPENAI_API_KEY",
       openai_params = {

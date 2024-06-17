@@ -11,6 +11,7 @@ return {
       end,
       desc = "Pick to close",
     },
+    ["<leader>E"] = { ":Telescope emoji<cr>", desc = "Emoji Picker in Telescope" },
     ["<leader>b"] = { name = "Buffers" },
     ["zz"] = { ":w<cr>", desc = "Save File" }, -- change description but the same command
     ["<leader>Ft"] = { ":Format<cr>", desc = "Format file" },
@@ -34,6 +35,8 @@ return {
 
     ["<leader>ge"] = { ":ChatGPT<cr>", desc = "Open GPT prompt" },
 
+    ["<C-g>t"] = { "<cmd>GpChatToggle popup<cr>", desc = "Toggle ChatGPT"},
+
     ["}"] = { function() buffer.nav(1) end, desc = "Next buffer" },
     ["{"] = { function() buffer.nav(-1) end, desc = "Prev buffer" },
   },
@@ -46,5 +49,7 @@ return {
       [[:<BS><BS><BS><BS><BS>ChatGPTEditWithInstructions<cr>]],
       desc = "ChatGPT Instruction for the code",
     },
+
+    ["<C-g>t"] = { ":GpChatToggle popup<cr>", desc = "Toggle Chat (Visual)"},
   },
 }

@@ -19,35 +19,28 @@ return {
       filetype = {
         lua = { require("formatter.filetypes.lua").stylua },
         json = {
-          require("formatter.filetypes.javascript").prettierd,
+          require("formatter.filetypes.json").biome,
         },
-        -- json5 = {
-        -- 	function()
-        -- 		return { exe = "formatjson5", args = { "-" }, stdin = true }
-        -- 	end,
-        -- },
+        json5 = {
+          require("formatter.filetypes.javascript").biome,
+        },
         html = {
-          require('formatter.filetypes.html').prettier,
+          require("formatter.filetypes.html").prettierd,
         },
         css = {
-          -- require("formatter.filetypes.javascript").prettiereslint,
           require("formatter.filetypes.css").prettierd,
         },
         javascript = {
-          -- require("formatter.filetypes.javascript").prettiereslint,
-          require("formatter.filetypes.javascript").prettierd,
+          require("formatter.filetypes.javascript").biome,
         },
         javascriptreact = {
-          -- require("formatter.filetypes.javascriptreact").prettiereslint,
-          require("formatter.filetypes.javascriptreact").prettierd,
+          require("formatter.filetypes.javascriptreact").biome,
         },
         typescript = {
-          -- require("formatter.filetypes.typescript").prettiereslint,
-          require("formatter.filetypes.typescript").prettierd,
+          require("formatter.filetypes.typescript").biome,
         },
         typescriptreact = {
-          -- require("formatter.filetypes.typescriptreact").prettiereslint,
-          require("formatter.filetypes.typescriptreact").prettierd,
+          require("formatter.filetypes.typescriptreact").biome,
         },
         svelte = {
           require("formatter.filetypes.svelte").prettier,

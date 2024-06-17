@@ -90,12 +90,13 @@ return {
   servers = { "zls", "v_analyzer" },
   formatting = {
     format_on_save = false,
+    timeout_ms = 3200
   },
   config = {
     clangd = { capabilities = { offsetEncoding = "utf-8" } },
     zls = zls,
     v_analyzer = v_analyzer,
-    tsserver = tsserver,
+    -- tsserver = tsserver,
     tailwindcss = tailwindcss,
     svelte = svelte,
     prettierd = prettierd,

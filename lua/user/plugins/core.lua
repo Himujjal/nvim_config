@@ -62,4 +62,8 @@ return {
       )
     end,
   },
+  -- Telescope
+  {
+    "xiyaowong/telescope-emoji.nvim",
+  },
 }
