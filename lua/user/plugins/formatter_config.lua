@@ -2,14 +2,6 @@ local get_current_buffer_file_path = function() return vim.api.nvim_buf_get_name
 
 local escape_path = function(arg) return vim.fn.shellescape(arg, true) end
 
-local rome = function()
-  return {
-    exe = "rome",
-    args = { "format", "--stdin-file-path=" .. get_current_buffer_file_path() },
-    stdin = true,
-  }
-end
-
 return {
   "mhartington/formatter.nvim",
   event = "User AstroFile",
@@ -19,28 +11,32 @@ return {
       filetype = {
         lua = { require("formatter.filetypes.lua").stylua },
         json = {
-          require("formatter.filetypes.json").biome,
+          require("formatter.filetypes.json").prettier,
         },
         json5 = {
-          require("formatter.filetypes.javascript").biome,
+          require("formatter.filetypes.javascript").prettier,
         },
         html = {
           require("formatter.filetypes.html").prettier,
         },
         css = {
-          require("formatter.filetypes.css").prettierd,
+          require("formatter.filetypes.css").prettier,
         },
         javascript = {
-          require("formatter.filetypes.javascript").biome,
+          require("formatter.filetypes.javascript").prettier,
+          format_on_save = false,
         },
         javascriptreact = {
-          require("formatter.filetypes.javascriptreact").biome,
+          require("formatter.filetypes.javascriptreact").prettier,
+          format_on_save = false,
         },
         typescript = {
-          require("formatter.filetypes.typescript").biome,
+          require("formatter.filetypes.typescript").prettier,
+          format_on_save = false,
         },
         typescriptreact = {
-          require("formatter.filetypes.typescriptreact").biome,
+          require("formatter.filetypes.typescriptreact").prettier,
+          format_on_save = false,
         },
         svelte = {
           require("formatter.filetypes.svelte").prettier,
